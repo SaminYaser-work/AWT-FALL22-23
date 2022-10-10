@@ -25,6 +25,8 @@ Route::get('/', function () {
 // New method
 Route::get('/home', [PageController::class, 'home']);
 
-Route::get('/home/{age}', [PageController::class, 'setAge'])->name($age);
+Route::get('/home/{age}', [PageController::class, 'setAge']);
 
 Route::get('/register', [RegController::class, 'register']);
+
+Route::post('/doregister', [RegController::class, 'doRegistration']);

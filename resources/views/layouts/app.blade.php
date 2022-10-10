@@ -40,8 +40,10 @@
   </div>
 </nav>
 
-<h1 class="text-3xl">@yield('header')</h1>
-<main>
-    @yield('content')
-</main>
+<div class="container mx-auto">
+    <h1 class="text-3xl">@yield('header')</h1>
+    <main>
+        @yield('content')
+    </main>
+</div>
 </html>
