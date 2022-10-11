@@ -10,4 +10,8 @@ module.exports = {
     },
     plugins: [],
     darkMode: "class",
+    variants: {
+        backgroundColor: ["responsive", "hover", "focus", "active", "disabled"],
+        textColor: ["responsive", "hover", "focus", "active", "disabled"],
+    },
 };
