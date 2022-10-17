@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\RegController;
 use Illuminate\Support\Facades\Route;
@@ -29,5 +30,9 @@ Route::get('/home', [PageController::class, 'home']);
 Route::get('/home/{age}', [PageController::class, 'setAge']);
 
 Route::get('/register', [RegController::class, 'register']);
+
+Route::get('/login', [LoginController::class, 'login']);
+
+Route::post('/login', [LoginController::class, 'checkLogin']);
 
 Route::post('/doregister', [RegController::class, 'doRegistration']);

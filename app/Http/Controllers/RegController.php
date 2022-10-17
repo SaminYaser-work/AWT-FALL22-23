@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\agents;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RegController extends Controller
 {
@@ -35,7 +37,7 @@ class RegController extends Controller
                 'age' => 'required|min:18|numeric',
                 'mobile' => 'required|min:11|max:11',
                 'company' => 'required|min:5|string',
-                'img' => 'required|image'
+                // 'img' => 'image'
             ],
             [
                 'fisrt_name.required' => 'Please input your first name',
@@ -54,15 +56,28 @@ class RegController extends Controller
                 'company.required' => 'Please input your company',
                 'company.min' => 'Company name must be at least 5 characters long',
 
-                'img.required' => 'Please select a picture for your profile',
-                'img.image' => 'Please upload a image file',
+                // 'img.required' => 'Please select a picture for your profile',
+                // 'img.image' => 'Please upload a image file',
                 // 'img.mimetypes' => 'Please select a valid image file',
             ]
         );
 
-        $output = $request->name;
-        print_r($request);
+        if (isset($error)) {
+            $output = $request->name;
+            print_r($request);
 
-        return $output;
+            return $output;
+        } else {
+            $agents = new agents();
+            $agents->first_name = $request->first_name;
+            $agents->last_name = $request->last_name;
+            $agents->age = $request->age;
+            $agents->mobile = $request->mobile;
+            $agents->company = $request->company;
+            $agents->save();
+
+
+            return view('login');
+        }
     }
 }
