@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+// Changes
 class PageController extends Controller
 {
     private $name;
