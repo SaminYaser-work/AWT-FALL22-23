@@ -2,34 +2,28 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\agents;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class RegController extends Controller
+use App\Models\agents;
+
+class ProfileController extends Controller
 {
-    private $data;
 
-    function __construct()
+    function showProfile()
     {
-        // Label values
-        $this->data = [
-            'first_name' => 'Your first name',
-            'last_name' => 'Your last name',
-            'age' => 'Your age',
-            'company' => 'Your company name',
-            'mobile' => '017XXXXXXXX'
-        ];
+        $userInfo = session()->get('userInfo');
+
+        if ($userInfo) {
+            return view('profile', $userInfo);
+        } else {
+            return redirect('login');
+        }
     }
 
-    function register()
+    function updateProfile(Request $request)
     {
-        return view('register', $this->data);
-    }
 
-    function doRegistration(Request $request)
-    {
-        // Validation
+        // validate
         $request->validate(
             [
                 'first_name' => 'required|min:3|string',
@@ -62,22 +56,30 @@ class RegController extends Controller
             ]
         );
 
-        if (isset($error)) {
-            $output = $request->name;
-            print_r($request);
+        $userInfo = session()->get('userInfo');
 
-            return $output;
+        if ($userInfo) {
+
+            $info = agents::where('id', $userInfo['id'])->first();
+
+            $info->first_name = $request->first_name;
+            $info->last_name = $request->last_name;
+            $info->age = $request->age;
+            $info->mobile = $request->mobile;
+            $info->company = $request->company;
+            $info->save();
+
+            $userInfo['first_name'] = $request->first_name;
+            $userInfo['last_name'] = $request->last_name;
+            $userInfo['age'] = $request->age;
+            $userInfo['mobile'] = $request->mobile;
+            $userInfo['company'] = $request->company;
+
+            session()->put('userInfo', $userInfo);
+
+            return view('profile', $userInfo + ['updateSuccess' => true]);
         } else {
-            $agents = new agents();
-            $agents->first_name = $request->first_name;
-            $agents->last_name = $request->last_name;
-            $agents->age = $request->age;
-            $agents->mobile = $request->mobile;
-            $agents->company = $request->company;
-            $agents->save();
-
-
-            return redirect('/login-new-acc');
+            return redirect('login');
         }
     }
 }

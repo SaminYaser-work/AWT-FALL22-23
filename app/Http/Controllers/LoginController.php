@@ -24,19 +24,42 @@ class LoginController extends Controller
         return view('login', $this->labels);
     }
 
+    function loginAfterReg()
+    {
+        return view('login', $this->labels + ['showNewRegMsg' => true]);
+    }
+
     function checkLogin(Request $request)
     {
 
+        $request->session()->flush();
         $checkData = DB::table('users')->where('mobile', $request->mobile)->where('company', $request->company)->first();
 
         if ($checkData) {
 
-            $data = DB::table('users')->get();
+            $userInfo = [
+                'id' => $checkData->id,
+                'first_name' => $checkData->first_name,
+                'last_name' => $checkData->last_name,
+                'age' => $checkData->age,
+                'mobile' => $checkData->mobile,
+                'company' => $checkData->company
+            ];
 
-            return view('loggedin')
-                ->with('data', $data);
+            $request->session()->put('userInfo', $userInfo);
+
+            // return view('profile', $userInfo);
+            return redirect('/profile');
         } else {
             return view('login', $this->labels += ['showError' => true]);
         }
+    }
+
+    function showInfo()
+    {
+        $data = DB::table('users')->get();
+
+        return view('loggedin')
+            ->with('data', $data);
     }
 }

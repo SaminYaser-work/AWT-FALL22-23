@@ -3,6 +3,7 @@
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\RegController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,22 +18,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    // return view('welcome');
     return redirect('/home');
 });
 
-// Old method
+// Old syntax
 // Route::get('/hello', 'PageController@home');
 
-// New method
+// New syntax
 Route::get('/home', [PageController::class, 'home']);
-
 Route::get('/home/{age}', [PageController::class, 'setAge']);
 
 Route::get('/register', [RegController::class, 'register']);
+Route::post('/doregister', [RegController::class, 'doRegistration']);
 
 Route::get('/login', [LoginController::class, 'login']);
-
+Route::get('/login-new-acc', [LoginController::class, 'loginAfterReg']);
 Route::post('/login', [LoginController::class, 'checkLogin']);
 
-Route::post('/doregister', [RegController::class, 'doRegistration']);
+Route::get('/profile', [ProfileController::class, 'showProfile']);
+Route::post('/update', [ProfileController::class, 'updateProfile']);
+
+// For debugging, remove this in production
+Route::get('/loggedin', [LoginController::class, 'showInfo']);
