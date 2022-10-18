@@ -8,7 +8,7 @@ _Sec: B_
 ## Tasks
 - [Task 1](https://github.com/SaminYaser-work/AWT-FALL22-23/blob/master/resources/views/register.blade.php) (Form creation)
 - [Task 2](https://github.com/SaminYaser-work/AWT-FALL22-23/blob/master/app/Http/Controllers/RegController.php) (Form validation)
-- Task 3 (Update database) (Coming soon)
+- [Task 3](https://github.com/SaminYaser-work/AWT-FALL22-23/blob/master/app/Http/Controllers/ProfileController.php) (Update database)
 
 ## Usage Instruction
 
