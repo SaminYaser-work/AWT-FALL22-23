@@ -29,7 +29,19 @@ Initiate the environment variables by copying the `.env.example` file to `.env` 
 
 ```bash
 copy .env.example .env
+```
 
+Change the database credentials in the `.env` file to your own credentials. Mine is
+    
+```bash
+DB_DATABASE=agents
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Then, run the following commands to generate the application key and migrate the database:
+
+```bash
 php artisan key:generate
 ```
 
