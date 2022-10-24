@@ -1,14 +1,16 @@
 # AWT LAB TASKS
-__YASER, SAMIN__
+
+**YASER, SAMIN**
 
 _19-39442-1_
 
 _Sec: B_
 
 ## Tasks
-- [Task 1](https://github.com/SaminYaser-work/AWT-FALL22-23/blob/master/resources/views/register.blade.php) (Form creation)
-- [Task 2](https://github.com/SaminYaser-work/AWT-FALL22-23/blob/master/app/Http/Controllers/RegController.php) (Form validation)
-- [Task 3](https://github.com/SaminYaser-work/AWT-FALL22-23/blob/master/app/Http/Controllers/ProfileController.php) (Update database)
+
+-   [Task 1](https://github.com/SaminYaser-work/AWT-FALL22-23/blob/master/resources/views/register.blade.php) (Form creation)
+-   [Task 2](https://github.com/SaminYaser-work/AWT-FALL22-23/blob/master/app/Http/Controllers/RegController.php) (Form validation)
+-   [Task 3](https://github.com/SaminYaser-work/AWT-FALL22-23/blob/master/app/Http/Controllers/ProfileController.php) (Update database)
 
 ## Usage Instruction
 
@@ -17,6 +19,7 @@ Firstly, clone the repository using the following command:
 ```bash
 git clone https://github.com/SaminYaser-work/AWT-FALL22-23.git
 ```
+
 Then, `cd` into that directory and run the following commands to install the dependencies:
 
 ```bash
@@ -32,7 +35,7 @@ copy .env.example .env
 ```
 
 Change the database credentials in the `.env` file to your own credentials. Mine is
-    
+
 ```bash
 DB_DATABASE=agents
 DB_USERNAME=root
@@ -54,7 +57,7 @@ php artisan serve
 And the following command for tailwind to work:
 
 ```bash
-npm watch
+npm run watch
 ```
 
 Visit `http://localhost:8000` to see the website.
