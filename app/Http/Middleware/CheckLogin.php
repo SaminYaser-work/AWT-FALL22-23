@@ -19,8 +19,8 @@ class CheckLogin
     {
 
         if (!session()->has('userInfo')) {
-            // return redirect('login');
-            return redirect('loginfirst');
+            return redirect('login');
+            // return redirect('loginfirst');
             // return redirect()->action([LoginController::class, 'loginFirst']);
         }
 
