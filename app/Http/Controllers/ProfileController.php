@@ -86,6 +86,10 @@ class ProfileController extends Controller
     function logout()
     {
         session()->forget('userInfo');
+        // session()->forget('_previous');
+        session()->put('_previous', url('login'));
+        // session()->flush();
+        // dd(session()->all());
         return redirect('login');
     }
 }

@@ -36,7 +36,7 @@ Route::post('/doregister', [RegController::class, 'doRegistration'])
 Route::get('/login', [LoginController::class, 'login']);
 Route::get('/loginfirst', [LoginController::class, 'loginFirst']);
 Route::get('/login-new-acc', [LoginController::class, 'loginAfterReg']);
-Route::post('/login', [LoginController::class, 'checkLogin']);
+Route::post('/login', [LoginController::class, 'checkVal']);
 
 Route::get('/profile', [ProfileController::class, 'showProfile'])
     ->middleware('checkLogin');

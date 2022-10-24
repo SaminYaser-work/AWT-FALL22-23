@@ -13,8 +13,6 @@ class LoginController extends Controller
 
     function __construct()
     {
-
-
         $this->labels = [
             'mobile' => 'Your mobile no.',
             'company' => 'Your company name'
@@ -26,6 +24,11 @@ class LoginController extends Controller
         return view('login', $this->labels);
     }
 
+    function loginWithFlags($data)
+    {
+        return view('login', $this->labels + $data);
+    }
+
     function loginAfterReg()
     {
         return view('login', $this->labels + ['showNewRegMsg' => true]);
@@ -33,10 +36,11 @@ class LoginController extends Controller
 
     function loginFirst()
     {
-        return view('login', $this->labels + ['showMustLogin' => true]);
+        $data = ['showMustLogin' => true];
+        return $this->loginWithFlags($data);
     }
 
-    function checkLogin(Request $request)
+    function checkVal(Request $request)
     {
 
         $request->session()->flush();
