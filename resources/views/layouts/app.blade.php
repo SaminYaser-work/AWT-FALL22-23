@@ -34,7 +34,7 @@
                 <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/5a/Logo_of_Bangladesh_Chhatra_League.svg/1200px-Logo_of_Bangladesh_Chhatra_League.svg.png"
                     class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
 
-                <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Chattro League</span>
+                <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">বাংলাদেশ ছাত্রলীগ</span>
 
             </a>
 

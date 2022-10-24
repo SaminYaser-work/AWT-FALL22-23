@@ -16,7 +16,7 @@ class ProfileController extends Controller
         if ($userInfo) {
             return view('profile', $userInfo);
         } else {
-            return redirect('login');
+            dd($userInfo); // middleware has failed
         }
     }
 
@@ -81,5 +81,11 @@ class ProfileController extends Controller
         } else {
             return redirect('login');
         }
+    }
+
+    function logout()
+    {
+        session()->forget('userInfo');
+        return redirect('login');
     }
 }
