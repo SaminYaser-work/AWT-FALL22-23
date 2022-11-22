@@ -33,4 +33,9 @@ class PageController extends Controller
             ->with('age', $age)
             ->with('imageLink', $this->imageLink);
     }
+
+    function apiTest()
+    {
+        return view('api_test');
+    }
 }

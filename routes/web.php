@@ -44,6 +44,8 @@ Route::get('/logout', [ProfileController::class, 'logout']);
 
 Route::post('/update', [ProfileController::class, 'updateProfile']);
 
+Route::get('/api_test', [PageController::class, 'apiTest']);
+
 
 // For debugging, remove this in production
 Route::get('/loggedin', [LoginController::class, 'showInfo']);
