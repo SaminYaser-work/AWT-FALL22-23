@@ -8,6 +8,10 @@ _Sec: B_
 
 ## Tasks
 
+### Final Term
+- [FT 1 | API | 2 GET Request, 3 POST Request](https://github.com/SaminYaser-work/AWT-FALL22-23/blob/master/resources/views/api_test.blade.php)
+
+### Mid Term
 -   [Task 1](https://github.com/SaminYaser-work/AWT-FALL22-23/blob/master/resources/views/register.blade.php) (Form creation)
 -   [Task 2](https://github.com/SaminYaser-work/AWT-FALL22-23/blob/master/app/Http/Controllers/RegController.php) (Form validation)
 -   [Task 3](https://github.com/SaminYaser-work/AWT-FALL22-23/blob/master/app/Http/Controllers/ProfileController.php) (Update database)
