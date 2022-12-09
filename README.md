@@ -10,6 +10,7 @@ _Sec: B_
 
 ### Final Term
 - [FT 1 | API | 2 GET Request, 3 POST Request](https://github.com/SaminYaser-work/AWT-FALL22-23/blob/master/resources/views/api_test.blade.php)
+- [FT 2 | Axios](https://github.com/SaminYaser-work/TraffiChain/blob/master/routes/api.php)
 
 ### Mid Term
 -   [Task 1](https://github.com/SaminYaser-work/AWT-FALL22-23/blob/master/resources/views/register.blade.php) (Form creation)
